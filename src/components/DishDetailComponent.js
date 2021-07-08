@@ -61,10 +61,12 @@ const DishDetail = (props) =>{
   const dishComment = <RenderComments comments={props.dish.comments} />;
 
   return (
+    <div className="container">
       <div className='row'>
           {dishItem}
           {dishComment}
       </div>
+    </div>
   )
 }
 
