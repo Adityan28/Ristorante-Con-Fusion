@@ -30,7 +30,7 @@ class CommentForm extends Component {
   }
 
   handleSubmit(values) {
-    this.props.addComment(this.props.dishId, values.rating, values.yourname, values.comment);
+    this.props.postComment(this.props.dishId, values.rating, values.author, values.comment);
   }
 
   render() {
@@ -53,8 +53,8 @@ class CommentForm extends Component {
              </Row>
 
              <Row className="form-group">
-               <Label htmlFor="yourname">Your Name</Label>
-               <Control.text model=".yourname" id="yourname" name="yourname"
+               <Label htmlFor="author">Your Name</Label>
+               <Control.text model=".author" id="author" name="author"
                 placeholder="Your Name"
                 className="form-control"
                 validators={{
@@ -62,7 +62,7 @@ class CommentForm extends Component {
                 }} />
                 <Errors
                     className="text-danger"
-                    model=".yourname"
+                    model=".author"
                     show="touched"
                     messages={{
                         required: 'Required.',
@@ -114,7 +114,7 @@ function RenderDish({dish}) {
     }
 }
 
-function RenderComments({comments, addComment, dishId}){
+function RenderComments({comments, postComment, dishId}) {
     if (comments == null) {
         return (<div></div>)
     }
@@ -137,7 +137,7 @@ function RenderComments({comments, addComment, dishId}){
                 {cmnts}
             </ul>
           </div>
-          <CommentForm dishId={dishId} addComment={addComment}/>
+          <CommentForm dishId={dishId} postComment={postComment} />
         </div>
     )
 }
@@ -180,7 +180,7 @@ const DishDetail = (props) =>{
           </div>
           <div className="col m-1">
             <RenderComments comments={props.comments}
-            addComment={props.addComment}
+            postComment={props.postComment}
             dishId={props.dish.id} />
           </div>
         </div>
