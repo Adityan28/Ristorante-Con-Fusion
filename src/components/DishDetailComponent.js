@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import { Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle,
-   Breadcrumb, BreadcrumbItem, Row, Col, Button, Modal, ModalHeader, ModalBody,
-   Form, FormGroup, Input, Label } from "reactstrap";
+import { Card, CardImg, CardText, CardBody, CardTitle,
+   Breadcrumb, BreadcrumbItem, Row, Button, Modal, ModalHeader, ModalBody, Label } from "reactstrap";
 import { Link } from 'react-router-dom';
 import { Control, LocalForm, Errors } from 'react-redux-form';
 import { Loading } from './LoadingComponent';
@@ -43,19 +42,19 @@ class CommentForm extends Component {
            <LocalForm onSubmit={(values) => this.handleSubmit(values)}>
              <Row className="form-group">
                <Label htmlFor="rating">Rating</Label>
-               <Control.select model=".rating" id="rating" name="rating"
+               <Control.Select model=".rating" id="rating" name="rating"
                       className="form-control">
                   <option>1</option>
                   <option>2</option>
                   <option>3</option>
                   <option>4</option>
                   <option>5</option>
-              </Control.select>
+               </Control.Select>
              </Row>
 
              <Row className="form-group">
                <Label htmlFor="author">Your Name</Label>
-               <Control.text model=".author" id="author" name="author"
+               <Control.Text model=".author" id="author" name="author"
                 placeholder="Your Name"
                 className="form-control"
                 validators={{
@@ -75,7 +74,7 @@ class CommentForm extends Component {
 
              <Row className="form-group">
                <Label htmlFor="comment">Comment</Label>
-               <Control.textarea model=".comment" id="comment" name="comment"
+               <Control.Textarea model=".comment" id="comment" name="comment"
                 rows="6"
                 className="form-control"/>
              </Row>
