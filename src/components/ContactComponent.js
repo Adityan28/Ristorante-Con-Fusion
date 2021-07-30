@@ -19,7 +19,7 @@ class Contact extends Component {
 
   handleSubmit(values) {
     console.log('Current State is: ' + JSON.stringify(values));
-    alert('Current State is: ' + JSON.stringify(values));
+    this.props.postFeedback(values);
     this.props.resetFeedbackForm();
   }
 
@@ -72,7 +72,7 @@ class Contact extends Component {
               <Row className="form-group">
                 <Label htmlFor="firstname" md={2}>First Name</Label>
                 <Col md={10}>
-                  <Control.text model=".Firstname" id="Firstname" name="Firstname"
+                  <Control.text model=".firstname" id="firstname" name="firstname"
                     placeholder="First Name"
                     className="form-control"
                     validators={{
