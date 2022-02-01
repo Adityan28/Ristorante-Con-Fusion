@@ -11,6 +11,11 @@ In the project directory, you can run:
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
+The Node module, json-server, provides a very simple way to set up a web server that supports a full-fledged REST API server.
+Installing json-server: [npm install json-server -g]
+Create a folder named json-server anywhere and place the db.json file there
+Go to the folder with db.json and run: [json-server --watch db.json -p 3001 -d 2000]
+
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
