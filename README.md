@@ -16,6 +16,8 @@ Installing json-server: [npm install json-server -g]
 Create a folder named json-server anywhere and place the db.json file there
 Go to the folder with db.json and run: [json-server --watch db.json -p 3001 -d 2000]
 
+Open [http://localhost:3001](http://localhost:3001) to view the website with correct data
+
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
